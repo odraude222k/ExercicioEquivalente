@@ -3,8 +3,8 @@ package org.example;
 public class Mago extends Habitante implements Feitico, Cura{
    private String cor;
 
-   public Mago(int id, String nome, int idade, float energia, String nomeArma, boolean magicaArma, String cor) {
-      super(id, nome, idade, energia, nomeArma, magicaArma);
+   public Mago(String nome, int idade, float energia, Arma nomeArma, String cor) {
+      super(nome, idade, energia, nomeArma);
       this.cor = cor;
    }
 
@@ -20,8 +20,7 @@ public class Mago extends Habitante implements Feitico, Cura{
 
    @Override
    public void mostraInfo(){
-      super.mostraInfo();
-      System.out.println("Cor: " + this.cor);
+      super.atacar();
 
    }
 

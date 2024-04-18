@@ -21,13 +21,13 @@ public abstract class  Habitante {
         }
     }
 
-    public Habitante(int id, String nome, int idade, float energia, String nomeArma, boolean magicaArma) {
-        this.id = id;
+    public Habitante(String nome, int idade, float energia, Arma novaarma) {
         this.nome = nome;
         this.idade = idade;
         this.energia = energia;
-        this.arma = new Arma (nomeArma,magicaArma);
+        this.arma = novaarma;
         contador++;
+        this.id = contador;
     }
 
     public void atacar (){

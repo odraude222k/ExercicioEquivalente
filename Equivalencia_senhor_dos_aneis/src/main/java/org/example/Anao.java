@@ -4,20 +4,15 @@ public class Anao extends Habitante implements Mineracao{
     private float altura;
     private String reino;
 
-    public Anao(int id, String nome, int idade, float energia, String nomeArma, boolean magicaArma, float altura, String reino) {
-        super(id, nome, idade, energia, nomeArma, magicaArma);
+    public Anao(String nome, int idade, float energia, Arma nomeArma, float altura, String reino) {
+        super(nome, idade, energia, nomeArma);
         this.altura = altura;
         this.reino = reino;
     }
 
     @Override
     public void atacar(){
-        if (arma.isMagica()){
-            this.energia -= 20;
-        } else {
-            this.energia -= 10;
-        }
-        System.out.println("Heroi atacou com " + this.arma.getNomeArma());
+        super.atacar();
     }
     @Override
     public void mostraInfo(){

@@ -3,8 +3,8 @@ package org.example;
 public class Elfo extends Habitante implements Cura{
     private String tribo;
 
-    public Elfo(int id, String nome, int idade, float energia, String nomeArma, boolean magicaArma, String tribo) {
-        super(id, nome, idade, energia, nomeArma, magicaArma);
+    public Elfo(String nome, int idade, float energia, Arma nomeArma, String tribo) {
+        super(nome, idade, energia, nomeArma);
         this.tribo = tribo;
     }
 
@@ -14,12 +14,7 @@ public class Elfo extends Habitante implements Cura{
 
     @Override
     public void atacar(){
-        if (arma.isMagica()){
-            this.energia -= 20;
-        } else {
-            this.energia -= 10;
-        }
-        System.out.println("Heroi atacou com " + this.arma.getNomeArma());
+        super.atacar();
     }
 
     @Override
